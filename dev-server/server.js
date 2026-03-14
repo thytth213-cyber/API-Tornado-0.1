@@ -28,10 +28,10 @@ app.use(cors({
   credentials: true
 }));
 
-// Serve uploaded files
-const isVercel = process.env.VERCEL === '1' || process.env.NOW_REGION;
-const uploadsPath = isVercel ? '/tmp/uploads' : path.join(__dirname, 'uploads');
-app.use('/uploads', express.static(uploadsPath));
+// Serve uploaded files - DISABLED: Using Cloudinary instead
+// const isVercel = process.env.VERCEL === '1' || process.env.NOW_REGION;
+// const uploadsPath = isVercel ? '/tmp/uploads' : path.join(__dirname, 'uploads');
+// app.use('/uploads', express.static(uploadsPath));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
