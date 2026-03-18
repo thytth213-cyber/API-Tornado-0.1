@@ -16,6 +16,8 @@ const contentRoutes = require('./routes/content');
 const uploadRoutes = require('./routes/upload');
 const authRoutes = require('./routes/auth');
 const settingsRoutes = require('./routes/settings');
+const productRoutes = require('./routes/product');
+const serviceRoutes = require('./routes/service');
 
 const app = express();
 app.use(express.json());
@@ -37,6 +39,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/settings', settingsRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/services', serviceRoutes);
 
 const PORT = process.env.PORT || 5000;
 // Prefer an explicit IPv4 address for local development to avoid
